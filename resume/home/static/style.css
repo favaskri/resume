@@ -1,0 +1,66 @@
+/* resume_app/static/resume_app/styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.container {
+    width: 70%;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 2px solid #f4f4f9;
+}
+
+.photo img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.contact-info {
+    text-align: right;
+}
+
+.contact-info h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+.main-content {
+    padding: 20px 0;
+}
+
+h2 {
+    border-bottom: 2px solid #f4f4f9;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.about-me,
+.education,
+.expertise,
+.work-experience,
+.language,
+.references {
+    margin-bottom: 20px;
+}
+
+.job p {
+    margin: 5px 0;
+}

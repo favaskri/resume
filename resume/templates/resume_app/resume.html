@@ -1,0 +1,74 @@
+
+{% extends 'base_resume.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="container">
+    <div class="header">
+        <div class="photo">
+            <img src="{% static 'favas.jpg' %}" alt="{{ resume.name }}">
+        </div>
+        <div class="contact-info">
+            <h1>{{ resume.name }}</h1>
+            <p>{{ resume.title }}</p>
+            <p>{{ resume.contact.phone }}</p>
+            <p>{{ resume.contact.email }}</p>
+            <p>{{ resume.contact.website }}</p>
+            <p>{{ resume.contact.address }}</p>
+            {% if resume.gender == 'male' %}
+                <p>👨</p>
+            {% elif resume.gender == 'female' %}
+                <p>👩</p>
+            {% endif %}
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="about-me">
+            <h2>About Me</h2>
+            <p>{{ resume.about }}</p>
+        </div>
+        <div class="education">
+            <h2>Education</h2>
+            {% for edu in resume.education %}
+                <p>{{ edu.degree }}</p>
+                <p>{{ edu.institution }}</p>
+                <p>{{ edu.year }}</p>
+            {% endfor %}
+        </div>
+        <div class="expertise">
+            <h2>Expertise</h2>
+            {% for skill in resume.expertise %}
+                <p>{{ skill }}</p>
+            {% endfor %}
+        </div>
+        <div class="work-experience">
+            <h2>Work Experience</h2>
+            {% for job in resume.experience %}
+                <div class="job">
+                    <p>{{ job.period }}</p>
+                    <p>{{ job.company }}</p>
+                    <p>{{ job.role }}</p>
+                    <p>{{ job.description }}</p>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="language">
+            <h2>Language</h2>
+            {% for lang in resume.languages %}
+                <p>{{ lang }}</p>
+            {% endfor %}
+        </div>
+        <div class="references">
+            <h2>References</h2>
+            {% for ref in resume.references %}
+                <p>{{ ref.name }}</p>
+                <p>{{ ref.position }}</p>
+                <p>{{ ref.company }}</p>
+                <p>{{ ref.phone }}</p>
+                <p>{{ ref.email }}</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
